@@ -1,3 +1,4 @@
 function BrightcoveVideoBlock(runtime, element) {
-    console.log('Starting...');
+    console.log('Starting video players...');
+    brightcove.createExperiences();
 }

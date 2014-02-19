@@ -27,6 +27,9 @@ class BrightcoveVideoBlock(XBlock):
                   scope=Scope.content)
     api_key = String(help="Key to access the Brightcove API", default='',
                      scope=Scope(UserScope.NONE, BlockScope.DEFINITION))
+    api_bcpid = String(help="Brightcove API - PlayerID", default='', scope=Scope.content)
+    api_bckey = String(help="Brightcove API - PlayerKey", default='', scope=Scope.content)
+    api_bctid = String(help="Brightcove API - @videoPlayer", default='', scope=Scope.content)
 
     def student_view(self, context):
         """
@@ -37,6 +40,7 @@ class BrightcoveVideoBlock(XBlock):
             'self': self,
         }))
         fragment.add_css(load_resource('static/css/brightcove_video.css'))
+        fragment.add_javascript(load_resource('static/js/vendor/brightcove_experiences.js'))
         fragment.add_javascript(load_resource('static/js/brightcove_video.js'))
 
         fragment.initialize_js('BrightcoveVideoBlock')

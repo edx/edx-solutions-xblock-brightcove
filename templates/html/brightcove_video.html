@@ -1,0 +1,16 @@
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<div class="brightcove-video">
+  <object id="myExperience{{ self.api_bcpid }}" class="brightcove-player BrightcoveExperience">
+    <param name="bgcolor" value="#FFFFFF" />
+    <param name="width" value="480" />
+    <param name="height" value="270" />
+    <param name="playerID" value="{{ self.api_bcpid }}" />
+    <param name="playerKey" value="{{ self.api_bckey }}" />
+    <param name="@videoPlayer" value="{{ self.api_bctid }}" />
+    <param name="isVid" value="true" />
+    <param name="isUI" value="true" />
+    <param name="dynamicStreaming" value="true" />
+  </object>
+</div>
+
