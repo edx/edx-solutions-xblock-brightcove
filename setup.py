@@ -29,7 +29,7 @@ setup(
         'XBlock',
     ],
     entry_points={
-        'xblock.v1': 'brightcove-video = brightcove_video.BrightcoveVideoBlock',
+        'xblock.v1': 'brightcove-video = brightcove_video:BrightcoveVideoBlock',
     },
     package_data=package_data("brightcove_video", "static"),
 )

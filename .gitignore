@@ -1,1 +1,3 @@
 xblock_brightcove.egg-info
+*.pyc
+*~

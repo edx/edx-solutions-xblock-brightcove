@@ -1,1 +1,1 @@
-from brightcove_video import BrightcoveVideoBlock
+from .brightcove_video import BrightcoveVideoBlock
