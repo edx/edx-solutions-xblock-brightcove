@@ -1,0 +1,1 @@
+from brightcove_video import BrightcoveVideoBlock
