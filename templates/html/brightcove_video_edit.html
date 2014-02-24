@@ -1,1 +1,19 @@
-URL: <input type="text" value=""></input>
+<!-- TODO: Replace by default edit view once available in Studio -->
+<div class="wrapper-comp-settings is-active" id="settings-tab">
+  <ul class="list-input settings-list">
+      <li class="field comp-setting-entry metadata_entry is-set">
+          <div class="wrapper-comp-setting">
+            <label class="label setting-label" for="video-href">Brightcove video URL</label>
+            <input class="input setting-input" id="video-href" value="{{ self.href }}" type="text">
+          </div>
+          <span class="tip setting-help">To get the URL of a Brightcove video, go to the Media section of the Videocloud admin, select the video entry, then click on "Quick Video Publish" on the side panel, and finally select URL on "Copy publishing code".</span>
+      </li>
+      <li class="field comp-setting-entry metadata_entry is-set">
+          <div class="wrapper-comp-setting">
+            <label class="label setting-label" for="video-api-key">Brightcove API key</label>
+            <input class="input setting-input" id="video-api-key" value="{{ self.api_key }}" type="text">
+          </div>
+          <span class="tip setting-help">The API key of the Brightcove account to use to query this video's details</span>
+      </li>
+  </ul>
+</div>

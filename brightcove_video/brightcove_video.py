@@ -60,16 +60,27 @@ class BrightcoveVideoBlock(XBlock):
         fragment.add_content(render_template('templates/html/brightcove_video_edit.html', {
             'self': self,
         }))
+        fragment.add_javascript(load_resource('static/js/brightcove_video_edit.js'))
 
-        # TODO: Allow to set in Studio (<input> field & JS callback)
-        #  - self.href
-        #  - self.api_key
-
-        # TODO: Only perform when URL is changed in studio, to not overwrite
-        # changes made by the instructor if he edits the title
-        self.set_api_params_from_href()
+        fragment.initialize_js('BrightcoveVideoEditBlock')
 
         return fragment
+
+    @XBlock.json_handler
+    def studio_submit(self, submissions, suffix=''):
+        log.info(u'Received submissions: {}'.format(submissions))
+
+        self.api_key = submissions['api_key']
+
+        if submissions.get('href', self.href) != self.href: # URL changed
+            self.href = submissions['href']
+
+            # Update the video details
+            self.set_api_params_from_href()
+
+        return {
+            'result': 'success',
+        }
 
     def set_api_params_from_href(self):
         """
