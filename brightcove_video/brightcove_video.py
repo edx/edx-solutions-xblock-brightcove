@@ -32,9 +32,9 @@ class BrightcoveVideoBlock(XBlock):
     api_key = String(help="Key to access the Brightcove API",
                      default='JqnRdhYvLWNtVJllXkMzGGGTh66uLLmz8JB8YlcZQlC8OX94H4ZXXw..',
                      scope=Scope.content)
-    api_bcpid = String(help="Brightcove API - PlayerID", default='', scope=Scope.content)
-    api_bckey = String(help="Brightcove API - PlayerKey", default='', scope=Scope.content)
-    api_bctid = String(help="Brightcove API - @videoPlayer", default='', scope=Scope.content)
+    api_bcpid = String(help="Brightcove API - PlayerID", default='3222036674001', scope=Scope.content)
+    api_bckey = String(help="Brightcove API - PlayerKey", default='AQ~~,AAAC7X9CySE~,W5r6gx4kdiU9bUyJM5snIevMWD2gUysk', scope=Scope.content)
+    api_bctid = String(help="Brightcove API - @videoPlayer", default='3248962307001', scope=Scope.content)
 
     def student_view(self, context):
         """
@@ -91,6 +91,7 @@ class BrightcoveVideoBlock(XBlock):
         """
         bc_response = requests.get(self.href)
         bc_url = bc_response.url
+        log.info('Brightcove URL received from API: {}'.format(bc_url))
         bc_url_parts = urlparse.urlparse(bc_url)
 
         bc_url_splitpath = re.split('bcpid', bc_url_parts.path)
