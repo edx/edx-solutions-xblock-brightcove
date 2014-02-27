@@ -26,7 +26,7 @@ class BrightcoveVideoBlock(XBlock):
     """
     XBlock providing a video player for videos hosted on Brightcove
     """
-    href = String(help="The URL of the video to display", default='http://bcove.me/vkp4qrjl',
+    href = String(help="The URL of the video to display", default='http://bcove.me/4kgaw9rb',
                   scope=Scope.content)
     title = String(help="Title", default='Default video', scope=Scope.content)
     api_key = String(help="Key to access the Brightcove API",
@@ -34,7 +34,7 @@ class BrightcoveVideoBlock(XBlock):
                      scope=Scope.content)
     api_bcpid = String(help="Brightcove API - PlayerID", default='3222036674001', scope=Scope.content)
     api_bckey = String(help="Brightcove API - PlayerKey", default='AQ~~,AAAC7X9CySE~,W5r6gx4kdiU9bUyJM5snIevMWD2gUysk', scope=Scope.content)
-    api_bctid = String(help="Brightcove API - @videoPlayer", default='3248962307001', scope=Scope.content)
+    api_bctid = String(help="Brightcove API - @videoPlayer", default='3271663601001', scope=Scope.content)
 
     def student_view(self, context):
         """
