@@ -44,9 +44,11 @@ class BrightcoveVideoBlock(XBlock):
         fragment.add_content(render_template('templates/html/brightcove_video.html', {
             'self': self,
         }))
-        fragment.add_css(load_resource('static/css/brightcove_video.css'))
-        fragment.add_javascript(load_resource('static/js/vendor/brightcove_experiences.js'))
-        fragment.add_javascript(load_resource('static/js/brightcove_video.js'))
+        fragment.add_css_url(self.runtime.local_resource_url(self, 'public/css/brightcove_video.css'))
+        fragment.add_javascript_url(
+                self.runtime.local_resource_url(self, 'public/js/vendor/brightcove_experiences.js'))
+        fragment.add_javascript_url(
+                self.runtime.local_resource_url(self, 'public/js/brightcove_video.js'))
 
         fragment.initialize_js('BrightcoveVideoBlock')
 
@@ -60,7 +62,7 @@ class BrightcoveVideoBlock(XBlock):
         fragment.add_content(render_template('templates/html/brightcove_video_edit.html', {
             'self': self,
         }))
-        fragment.add_javascript(load_resource('static/js/brightcove_video_edit.js'))
+        fragment.add_javascript(load_resource('public/js/brightcove_video_edit.js'))
 
         fragment.initialize_js('BrightcoveVideoEditBlock')
 

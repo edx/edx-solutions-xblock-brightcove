@@ -1,5 +1,6 @@
 function BrightcoveVideoEditBlock(runtime, element) {
-    $('.save-button').bind('click', function() {
+    console.log($('.xblock-save-button', element));
+    $('.xblock-save-button').bind('click', function() {
         var data = {
             'href': $('#video-href').val(),
             'api_key': $('#video-api-key').val(),
