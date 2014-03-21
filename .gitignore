@@ -1,3 +1,4 @@
-xblock_brightcove.egg-info
+/xblock_brightcove.egg-info
+/dist
 *.pyc
 *~
