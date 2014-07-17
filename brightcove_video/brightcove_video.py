@@ -26,6 +26,8 @@ class BrightcoveVideoBlock(XBlock):
     """
     XBlock providing a video player for videos hosted on Brightcove
     """
+    display_name = String(help="Display name of the component", default="Brightcove Video",
+                          scope=Scope.settings)
     href = String(help="The URL of the video to display", default='http://bcove.me/4kgaw9rb',
                   scope=Scope.content)
     title = String(help="Title", default='Default video', scope=Scope.content)
