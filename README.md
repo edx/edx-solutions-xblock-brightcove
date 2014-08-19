@@ -6,7 +6,7 @@ This XBlock provides a HTML5 video player for Brightcove.
 Screenshot below shows the Brightcove Video Player XBlock rendered
 inside the edX LMS.
 
-![Student view](https://raw.githubusercontent.com/mtyaka/xblock-brightcove/readme-doc/doc/img/student-view.png)
+![Student view](https://raw.githubusercontent.com/edx-solutions/xblock-brightcove/0f08b1f3c0dbb47d6b698980208871a7055f7e9f/doc/img/student-view.png)
 
 Installation
 ------------
@@ -37,7 +37,7 @@ After adding a Brightcove Video XBlock to a course, there are two
 settings you should set in the studio edit view: _Brightcove video
 URL_ and _Brightcove API key_.
 
-![Edit view](https://raw.githubusercontent.com/mtyaka/xblock-brightcove/readme-doc/doc/img/edit-view.png)
+![Edit view](https://raw.githubusercontent.com/edx-solutions/xblock-brightcove/0f08b1f3c0dbb47d6b698980208871a7055f7e9f/doc/img/edit-view.png)
 
 The video URL is a short URL pointing to your video that should look
 something like `http://bcove.me/q5thswyv`.
