@@ -37,6 +37,11 @@ After adding a Brightcove Video XBlock to a course, there are two
 settings you should set in the studio edit view: _Brightcove video
 URL_ and _Brightcove API key_.
 
+Note: You will need to create a free trial account on the Brightcove
+website to do get them. See the 
+[Brightcove documentation](http://support.brightcove.com/en/video-cloud/docs/managing-media-api-tokens#get) 
+to learn how to get your API key.
+
 ![Edit view](https://raw.githubusercontent.com/edx-solutions/xblock-brightcove/0f08b1f3c0dbb47d6b698980208871a7055f7e9f/doc/img/edit-view.png)
 
 The video URL is a short URL pointing to your video that should look
