@@ -56,5 +56,5 @@ Settings -> API Management`. Use the `read` token as the API key.
 License
 -------
 
-The Image Explorer XBlock is available under the GNU Affero General
+The Brightcove XBlock is available under the GNU Affero General
 Public License (AGPLv3).
