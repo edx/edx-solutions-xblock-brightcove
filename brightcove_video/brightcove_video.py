@@ -12,7 +12,7 @@ from xblock.core import XBlock
 from xblock.fields import Scope, String
 from xblock.fragment import Fragment
 
-from .utils import load_resource, render_template
+from .utils import loader
 
 
 # Globals ###########################################################
@@ -43,7 +43,7 @@ class BrightcoveVideoBlock(XBlock):
         Player view, displayed to the student
         """
         fragment = Fragment()
-        fragment.add_content(render_template('templates/html/brightcove_video.html', {
+        fragment.add_content(loader.render_template('templates/html/brightcove_video.html', {
             'self': self,
         }))
         fragment.add_css_url(self.runtime.local_resource_url(self, 'public/css/brightcove_video.css'))
@@ -61,10 +61,10 @@ class BrightcoveVideoBlock(XBlock):
         Editing view in Studio
         """
         fragment = Fragment()
-        fragment.add_content(render_template('templates/html/brightcove_video_edit.html', {
+        fragment.add_content(loader.render_template('templates/html/brightcove_video_edit.html', {
             'self': self,
         }))
-        fragment.add_javascript(load_resource('public/js/brightcove_video_edit.js'))
+        fragment.add_javascript(loader.load_unicode('public/js/brightcove_video_edit.js'))
 
         fragment.initialize_js('BrightcoveVideoEditBlock')
 
@@ -89,7 +89,7 @@ class BrightcoveVideoBlock(XBlock):
     def set_api_params_from_href(self):
         """
         Retreives parameters identifying a Brightcove video when dealing with
-        the API, based on its short URL. The short URL is a convenience for the 
+        the API, based on its short URL. The short URL is a convenience for the
         user, which can use a short URL to add a video to Studio after uploading in
         Brightcove.
         """
@@ -116,4 +116,7 @@ class BrightcoveVideoBlock(XBlock):
             return
 
         bc_json = bc_response.json()
-        self.title = bc_json['name']
+        try:
+            self.title = bc_json['name']
+        except KeyError:
+            raise ValueError(bc_json['error'])
